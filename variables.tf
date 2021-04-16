@@ -10,7 +10,7 @@ variable "cidr" {
 
 variable "azs" {
   description = "Availability Zones onde as subnets serão criadas; caso vazia, serão usadas as AZs da região configurada"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
@@ -40,25 +40,25 @@ variable "enable_nat_gateway" {
 
 variable "private_subnets" {
   description = "Lista de CIDRs das subnets privadas"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
 variable "private_subnet_names" {
   description = "Lista de nomes das subnets privadas"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
 variable "public_subnets" {
   description = "Lista de CIDRs das subnets públicas"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
 variable "public_subnet_names" {
   description = "Lista de nomes das subnets públicas"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
@@ -70,13 +70,13 @@ variable "allow_all_egress" {
 
 variable "allow_extra_cidr_blocks" {
   description = "Lista de CIDRs adicionais para liberação de entrada no security group da VPC; requer que `enable_default_security_group` seja habilitada"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
 variable "allow_extra_cidr_blocks_egress" {
   description = "Lista de CIDRs adicionais para liberação de saída no security group da VPC; requer que `enable_default_security_group` seja habilitada"
-  type        = list
+  type        = list(any)
   default     = []
 }
 
